@@ -9,7 +9,8 @@
   ],
   "scripts": {
     "dev": "pnpm -C apps/web dev",
-    "build": "pnpm -C apps/web build",
+    "build": "pnpm -C apps/web build":"prisma generate --schema=../../prisma/schema.prisma && prisma migrate deploy --schema=../../prisma/schema.prisma && next build"
+,
     "start": "pnpm -C apps/web start",
     "prisma:deploy": "prisma migrate deploy",
     "prisma:push": "prisma db push",
